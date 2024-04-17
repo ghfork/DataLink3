@@ -32,11 +32,11 @@ runjar(){
 		nohup java ${SETTINGS[$1]} -jar -Xms${XMS[$1]} -Xmx${XMX[$1]} -XX:PermSize=${XXPS[$1]} -XX:MaxPermSize=${XXMPS[$1]} ${JAR_PATH}${JAR_NAME}${SUFFIX} > /dev/null 2>&1 &
 		pid=`ps -ef | grep ${PREFIX}-${JAR_NAME}${SUFFIX} | grep -v grep | awk '{print $2}'`
 		echo ""
-		echo "Service ${JAR_NAME} is starting！pid=${pid}"
+		echo "Service${1} ${JAR_NAME} is starting！pid=${pid}"
 		echo "........................Start successfully！........................."
 	else
 		echo ""
-		echo "Service ${JAR_NAME} is already running,it's pid = ${pid}. If necessary, please use command: sh auto.sh restart ${JAR_NAME}."
+		echo "Service${1} ${JAR_NAME} is already running,it's pid = ${pid}. If necessary, please use command: sh auto.sh restart ${JAR_NAME}."
 		echo ""
 	fi
 }

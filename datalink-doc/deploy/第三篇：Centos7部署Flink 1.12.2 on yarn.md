@@ -456,9 +456,9 @@ server.3=node3:2888:3888
 
 ### 2.7	UI界面
 
-​	http://192.168.123.156:8088/cluster/scheduler
+​	http://127.0.0.1:8088/cluster/scheduler
 
-​	http://192.168.123.156:8081/#/overview
+​	http://127.0.0.1:8081/#/overview
 
 ### 2.8	启动History Server
 

@@ -8,8 +8,8 @@
 
 | 序号 |       IP        | 管理员账号  | 操作系统  | 核数 | 内存 | 磁盘 | HOST别名 |
 | :--: | :-------------: | ----------- | :-------: | :--: | :--: | :--: | :------: |
-|  1   | 192.168.123.156 | root/123456 | Linux 7.6 | 16C  | 32G  |  2T  |  node1   |
-|  2   | 192.168.123.157 | root/123456 | Linux 7.6 | 16C  | 32G  |  2T  |  node2   |
+|  1   | 127.0.0.1 | root/123456 | Linux 7.6 | 16C  | 32G  |  2T  |  node1   |
+|  2   | 127.0.0.1 | root/123456 | Linux 7.6 | 16C  | 32G  |  2T  |  node2   |
 |  3   | 192.168.123.158 | root/123456 | Linux 7.6 | 16C  | 32G  |  2T  |  node3   |
 
 #### 1.1.1	验证操作系统发行版本
@@ -73,8 +73,8 @@ PING 202.108.22.5 (202.108.22.5) 56(84) bytes of data.
 
 ```shell
 [root@node1 home]# vi /etc/hosts
-192.168.123.156 node1
-192.168.123.157 node2
+127.0.0.1 node1
+127.0.0.1 node2
 192.168.123.158 node3
 ```
 
@@ -107,15 +107,15 @@ The key's randomart image is:
 |        E  .o    |
 +----[SHA256]-----+
 [root@node1 home]# cat /root/.ssh/id_rsa.pub >> authorized_keys
-[root@node1 home]# ssh-copy-id 192.168.123.157
+[root@node1 home]# ssh-copy-id 127.0.0.1
 /usr/bin/ssh-copy-id: INFO: Source of key(s) to be installed: "/root/.ssh/id_rsa.pub"
 /usr/bin/ssh-copy-id: INFO: attempting to log in with the new key(s), to filter out any that are already installed
 /usr/bin/ssh-copy-id: INFO: 1 key(s) remain to be installed -- if you are prompted now it is to install the new keys
-root@192.168.123.157's password: 
+root@127.0.0.1's password: 
 
 Number of key(s) added: 1
 
-Now try logging into the machine, with:   "ssh '192.168.123.157'"
+Now try logging into the machine, with:   "ssh '127.0.0.1'"
 and check to make sure that only the key(s) you wanted were added.
 [root@node1 home]# ssh-copy-id 192.168.123.158
 ```
@@ -736,9 +736,9 @@ standby
 
 #### 2.4.13	查看相关网页
 
-​	1.http://192.168.123.156:50070
+​	1.http://127.0.0.1:50070
 
-​	2.http://192.168.123.157:50070
+​	2.http://127.0.0.1:50070
 
 ​	3.http://192.168.123.158:8088
 
